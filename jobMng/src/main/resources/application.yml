@@ -1,0 +1,46 @@
+server:
+  port: 9998
+  context-path: /
+  session: 
+    timeout: 1800
+  tomcat: 
+    uri-encoding: UTF-8
+    max-connections: 200
+    max-threads: 300
+    accept-count: 2000
+
+mybatis:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  type-aliases-package: com.whisper.pro.pojo.bo
+
+spring:
+  profiles: 
+    active: dev
+  application: 
+    name: whisperPro
+
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+  datasource:
+#    jdbc:h2:file:/Users/zhuangjianglong/java-workspace/h2db/whisperPro;DB_CLOSE_DELAY=-1
+#    jdbc:h2:mem:whisper-db;DB_CLOSE_DELAY=-1
+    url: jdbc:h2:file:/Users/zhuangjianglong/java-workspace/h2db/whisperPro;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    schema: classpath:db/schema.sql
+    data: classpath:db/data.sql
+
+  sql:
+    init:
+      mode: never
+  h2:
+    console:
+      enabled: true
+
+
