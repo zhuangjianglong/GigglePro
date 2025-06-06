@@ -26,7 +26,7 @@ public class SttApi {
     private AsyncComponent asyncComponent;
 
     @PostMapping(value = "/addJob", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public void addJob(SttJob job){
+    public void addJob(@RequestBody SttJob job){
 
     }
 

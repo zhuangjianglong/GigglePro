@@ -32,7 +32,6 @@ public class TranslateJobServiceImpl implements TranslateJobService {
 	@Override
 	@Transactional
 	public void addJob(TranslateJob job) {
-
 		TranslateJobPO po = new TranslateJobPO();
 		po.setType(job.getType());
 		po.setStatus(1);

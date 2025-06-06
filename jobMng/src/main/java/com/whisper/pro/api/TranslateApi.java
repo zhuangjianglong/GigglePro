@@ -28,7 +28,7 @@ public class TranslateApi {
     private AsyncComponent asyncComponent;
 
     @PostMapping(value = "/addJob", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public void addJob(TranslateJob job){
+    public void addJob(@RequestBody TranslateJob job){
 
         translateJobService.addJob(job);
     }

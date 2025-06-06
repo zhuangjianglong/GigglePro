@@ -9,7 +9,7 @@ CREATE TABLE tb_stt_job(
     retry_count TINYINT,
     text_path varchar(1024)
 );
-
+ALTER TABLE tb_stt_job ALTER COLUMN id RESTART WITH 1000;
 
 DROP TABLE IF EXISTS tb_translate_job;
 CREATE TABLE tb_translate_job(
@@ -21,5 +21,4 @@ CREATE TABLE tb_translate_job(
     retry_count TINYINT,
     result_path varchar(1024)
 );
-CREATE INDEX idx_sttjobid ON tb_translate_job(stt_job_id);
-
+ALTER TABLE tb_translate_job ALTER COLUMN id RESTART WITH 1000;
